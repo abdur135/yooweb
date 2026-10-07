@@ -108,6 +108,8 @@ if (consultationForm) {
 
         const selectedPackage = packageSelect.value;
 
+        const domain = document.getElementById("domainType").value;
+
         const details = document.getElementById("projectDetails").value.trim();
 
         const message = `
@@ -120,6 +122,7 @@ Bisnis: ${business || "Belum ditentukan"}
 *KEBUTUHAN WEBSITE*
 Jenis Website: ${type}
 Paket: ${selectedPackage}
+Domain : ${domain}
 
 *DETAIL KEBUTUHAN*
 ${details}

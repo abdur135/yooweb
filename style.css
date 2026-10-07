@@ -1045,6 +1045,11 @@ button {
     font-size: 11px;
 }
 
+.hosting {
+    color: var(--muted);
+    font-size: 14px;
+}
+
 .pricing-btn {
     width: 100%;
     display: flex;
@@ -2169,6 +2174,114 @@ button {
     transform: translateY(0);
 }
 
+/* =========================
+   DOMAIN OPTIONAL
+========================= */
+
+.domain-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    margin-top: 28px;
+    padding: 28px 32px;
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--bg),
+            rgba(37, 99, 235, 0.06)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.domain-option:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+    transform: translateY(-3px);
+}
+
+.domain-option-content {
+    min-width: 0;
+    max-width: 760px;
+}
+
+.domain-option-tag {
+    display: inline-block;
+
+    color: var(--primary);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.domain-option h3 {
+    margin-top: 10px;
+
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -.5px;
+}
+
+.domain-option h3 .gradient-text {
+    display: inline;
+}
+
+.domain-option p {
+    margin-top: 9px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.domain-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-top: 15px;
+}
+
+.domain-types span {
+    padding: 6px 10px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.domain-option small {
+    display: block;
+
+    margin-top: 11px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.domain-option > .btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
 
 /* Responsive */
 
@@ -2426,6 +2539,22 @@ button {
     }
 }
 
+@media (max-width: 700px) {
+
+    .domain-option {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+
+        padding: 25px;
+    }
+
+    .domain-option > .btn {
+        width: 100%;
+    }
+
+}
+
 @media (max-width: 500px) {
 
     .device-visual {
@@ -2551,6 +2680,22 @@ button {
 
     .floating-whatsapp span {
         display: none;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .domain-option {
+        padding: 22px 20px;
+    }
+
+    .domain-option h3 {
+        font-size: 18px;
+    }
+
+    .domain-option p {
+        font-size: 11px;
     }
 
 }
