@@ -2243,7 +2243,7 @@ button {
 
     .why-main {
         grid-row: auto;
-        min-height: 600px;
+        min-height: auto;
     }
 
     .why-card {
@@ -2251,7 +2251,12 @@ button {
     }
 
     .device-visual {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
         height: 260px;
+        margin-top: 30px;
     }
 
     .device-screen {
