@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo 5 — Website Bisnis | Gentleman Barbershop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="demo_5.css">
+</head>
+<body>
+<a class="demo-badge" href="index.html">← Demo YooWeb · Website Bisnis</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo">GENTLEMAN<small>BARBERSHOP</small></a>
+    <nav id="menu">
+      <a href="#layanan">Layanan</a>
+      <a href="#harga">Harga</a>
+      <a href="#jam">Jam Buka</a>
+      <a href="#booking" class="btn sm">Booking</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="est">EST. 2018 · JAKARTA SELATAN</p>
+      <h1>Potongan rapi.<br><span>Percaya diri</span> naik level.</h1>
+      <p class="lead">Barber profesional, suasana santai, dan hasil yang bikin kamu nggak ragu foto di mana saja.</p>
+      <a href="#booking" class="btn">Booking Sekarang</a>
+      <div class="open" id="openNow"><i></i><span>Memeriksa jam buka…</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="layanan">
+    <div class="wrap">
+      <h2>LAYANAN <span>KAMI</span></h2>
+      <div class="grid4">
+        <article><b>✂</b><h3>Haircut</h3><p>Konsultasi gaya, cuci, potong, dan styling.</p></article>
+        <article><b>🪒</b><h3>Shave &amp; Beard</h3><p>Cukur handuk hangat dan rapikan jenggot.</p></article>
+        <article><b>💈</b><h3>Hair Coloring</h3><p>Semir, bleaching, dan toning rambut.</p></article>
+        <article><b>🧴</b><h3>Hair Treatment</h3><p>Creambath dan scalp treatment relaksasi.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="harga">
+    <div class="wrap">
+      <h2>DAFTAR <span>HARGA</span></h2>
+      <ul class="prices">
+        <li><div><h3>Classic Haircut</h3><p>Potong + cuci + styling</p></div><i></i><b>Rp55.000</b></li>
+        <li><div><h3>Premium Haircut</h3><p>Konsultasi + potong + pijat kepala</p></div><i></i><b>Rp85.000</b></li>
+        <li><div><h3>Beard Trim</h3><p>Rapikan jenggot &amp; kumis</p></div><i></i><b>Rp35.000</b></li>
+        <li><div><h3>Hot Towel Shave</h3><p>Cukur handuk hangat</p></div><i></i><b>Rp45.000</b></li>
+        <li><div><h3>Paket Gentleman</h3><p>Premium haircut + beard trim + shave</p></div><i></i><b>Rp150.000</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="jam">
+    <div class="wrap two">
+      <div>
+        <h2>JAM <span>BUKA</span></h2>
+        <table class="hours" id="hours">
+          <tr data-d="1"><td>Senin</td><td>10.00 – 21.00</td></tr>
+          <tr data-d="2"><td>Selasa</td><td>10.00 – 21.00</td></tr>
+          <tr data-d="3"><td>Rabu</td><td>10.00 – 21.00</td></tr>
+          <tr data-d="4"><td>Kamis</td><td>10.00 – 21.00</td></tr>
+          <tr data-d="5"><td>Jumat</td><td>10.00 – 22.00</td></tr>
+          <tr data-d="6"><td>Sabtu</td><td>09.00 – 22.00</td></tr>
+          <tr data-d="0"><td>Minggu</td><td>09.00 – 20.00</td></tr>
+        </table>
+      </div>
+      <div class="map" aria-label="Lokasi">
+        <div class="pin">📍</div>
+        <p><b>Jl. Kemang Raya No. 17</b>Jakarta Selatan<br>Parkir motor &amp; mobil tersedia</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="booking">
+    <div class="wrap two">
+      <div>
+        <h2>BOOKING <span>ONLINE</span></h2>
+        <p class="muted">Pilih layanan dan jam, konfirmasi langsung lewat WhatsApp. Tanpa antre.</p>
+      </div>
+      <form id="form" class="form">
+        <input name="nama" placeholder="Nama" required>
+        <select name="layanan" required>
+          <option value="">Pilih layanan</option>
+          <option>Classic Haircut</option><option>Premium Haircut</option><option>Beard Trim</option><option>Hot Towel Shave</option><option>Paket Gentleman</option>
+        </select>
+        <div class="two-in">
+          <input name="tanggal" id="tanggal" type="date" required>
+          <select name="jam" required>
+            <option value="">Jam</option>
+            <option>10.00</option><option>12.00</option><option>14.00</option><option>16.00</option><option>18.00</option><option>20.00</option>
+          </select>
+        </div>
+        <button class="btn" type="submit">Konfirmasi via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap">© 2026 Gentleman Barbershop — contoh demo website bisnis oleh YooWeb.</div></footer>
+
+<script>
+// Tandai hari ini & status buka (WIB)
+var hours = { 0: [9, 20], 1: [10, 21], 2: [10, 21], 3: [10, 21], 4: [10, 21], 5: [10, 22], 6: [9, 22] };
+var now = new Date(), d = now.getDay(), h = now.getHours() + now.getMinutes() / 60;
+var row = document.querySelector('tr[data-d="' + d + '"]');
+if (row) row.classList.add('today');
+var isOpen = h >= hours[d][0] && h < hours[d][1];
+var box = document.getElementById('openNow');
+box.classList.toggle('on', isOpen);
+box.querySelector('span').textContent = isOpen ? 'Buka sekarang — sampai ' + hours[d][1] + '.00' : 'Tutup sekarang — buka lagi besok';
+// Tanggal minimal hari ini
+document.getElementById('tanggal').min = now.toISOString().split('T')[0];
+// Booking ke WhatsApp
+document.getElementById('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = new FormData(this);
+  var msg = 'Halo Gentleman Barbershop, saya ' + f.get('nama') + ' mau booking ' + f.get('layanan') + ' tanggal ' + f.get('tanggal') + ' jam ' + f.get('jam') + '.';
+  window.open('https://wa.me/6281234567890?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+</body>
+</html>

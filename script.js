@@ -284,3 +284,84 @@ document.querySelectorAll(".project-gallery").forEach((gallery) => {
     }
 
 });
+
+(() => {
+    const demos = [
+        { file: "demo_1.html", type: "LANDING PAGE", title: "Brewlab Cold Brew",
+          desc: "Halaman promosi produk yang fokus mengubah pengunjung jadi pembeli, dengan form pesan langsung ke WhatsApp.",
+          feats: ["Hero & CTA kuat", "Varian & testimoni", "Pesan via WhatsApp"] },
+        { file: "demo_2.html", type: "COMPANY PROFILE", title: "Nusantara Konstruksi",
+          desc: "Website perusahaan yang membangun kepercayaan: profil, layanan, proyek, tim, dan kontak dalam satu tampilan rapi.",
+          feats: ["Statistik animasi", "Layanan & proyek", "Form kontak ke WhatsApp"] },
+        { file: "demo_3.html", type: "KATALOG PRODUK", title: "Batik Laras",
+          desc: "Katalog produk interaktif. Pelanggan bisa mencari, memfilter, memasukkan ke keranjang, lalu checkout lewat WhatsApp.",
+          feats: ["Pencarian & filter", "Keranjang belanja", "Checkout WhatsApp"] },
+        { file: "demo_4.html", type: "PORTFOLIO PERSONAL", title: "Rizky Pratama",
+          desc: "Portfolio personal yang menonjolkan karya, skill, dan pengalaman, lengkap dengan mode gelap dan terang.",
+          feats: ["Efek mengetik", "Mode gelap / terang", "Timeline pengalaman"] },
+        { file: "demo_5.html", type: "WEBSITE BISNIS", title: "Gentleman Barbershop",
+          desc: "Website usaha jasa dengan daftar harga, status buka otomatis, jam operasional, dan booking online.",
+          feats: ["Status buka real-time", "Daftar harga", "Booking via WhatsApp"] }
+    ];
+
+    const $ = (id) => document.getElementById(id);
+    const frame = $("demoFrame"), viewport = $("demoViewport"), device = $("demoDevice");
+    const tabs = document.querySelectorAll(".demo-tab");
+    const modeBtns = document.querySelectorAll(".demo-switch button");
+    if (!frame || !viewport) return;
+
+    let current = 0, mode = "desktop";
+
+    function fit() {
+        const w = mode === "mobile" ? 390 : 1280;
+        const scale = viewport.clientWidth / w;
+        frame.style.width = w + "px";
+        frame.style.height = viewport.clientHeight / scale + "px";
+        frame.style.transform = "scale(" + scale + ")";
+    }
+
+    function show(i) {
+        current = i;
+        const d = demos[i];
+
+        tabs.forEach((t, n) => {
+            t.classList.toggle("active", n === i);
+            t.setAttribute("aria-selected", n === i);
+        });
+
+        const info = $("demoInfo");
+        info.classList.add("swap");
+        void info.offsetWidth;
+        info.classList.remove("swap");
+
+        $("demoType").textContent = d.type;
+        $("demoTitle").textContent = d.title;
+        $("demoDesc").textContent = d.desc;
+        $("demoFeats").innerHTML = d.feats.map((f) => "<li>" + f + "</li>").join("");
+        $("demoOpen").href = d.file;
+        $("demoUrl").textContent = d.file;
+
+        viewport.classList.remove("ready");
+        frame.src = d.file;
+    }
+
+    frame.addEventListener("load", () => viewport.classList.add("ready"));
+    tabs.forEach((t) => t.addEventListener("click", () => show(+t.dataset.i)));
+
+    modeBtns.forEach((b) => b.addEventListener("click", () => {
+        mode = b.dataset.mode;
+        modeBtns.forEach((x) => x.classList.toggle("active", x === b));
+        device.classList.toggle("is-mobile", mode === "mobile");
+        setTimeout(fit, 460);
+        fit();
+    }));
+
+    new ResizeObserver(fit).observe(viewport);
+
+    let loaded = false;
+    new IntersectionObserver((entries, obs) => {
+        if (entries[0].isIntersecting && !loaded) {
+            loaded = true; show(0); fit(); obs.disconnect();
+        }
+    }, { rootMargin: "200px" }).observe(device);
+})();

@@ -291,552 +291,61 @@
             </div>
         </section>
                 
-        <!-- PORTFOLIO SECTION -->
-        <section class="portfolio" id="portfolio">
+        <!-- PORTFOLIO SECTION — LIVE DEMO -->
+        <section class="portfolio demo-section" id="portfolio">
 
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <span class="section-tag">
-                        SELECTED WORKS
-                    </span>
-
+                    <span class="section-tag">LIVE DEMO</span>
                     <h2>
-                        Karya Digital,
-                        <span class="gradient-text">Ide Nyata.</span>
+                        Coba Demonya,
+                        <span class="gradient-text">Rasakan Hasilnya.</span>
                     </h2>
-
                     <p>
-                        Beberapa project yang menunjukkan kemampuan YooWeb 
-                        dalam membangun website dan aplikasi untuk berbagai kebutuhan digital.
+                        Lima contoh website untuk berbagai kebutuhan bisnis.
+                        Pilih salah satu, lihat preview-nya langsung di sini.
                     </p>
-
                 </div>
 
-
-                <!-- FILTER -->
-
-                <div class="portfolio-filter reveal">
-
-                    <button
-                        class="filter-btn active"
-                        data-filter="all"
-                    >
-                        Semua
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="business"
-                    >
-                        Business
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="application"
-                    >
-                        Application
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="education"
-                    >
-                        Education
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="personal"
-                    >
-                        Personal
-                    </button>
-
+                <!-- TABS -->
+                <div class="demo-tabs reveal" role="tablist" aria-label="Pilih demo">
+                    <button class="demo-tab active" type="button" role="tab" data-i="0"><b>01</b> Landing Page</button>
+                    <button class="demo-tab" type="button" role="tab" data-i="1"><b>02</b> Company Profile</button>
+                    <button class="demo-tab" type="button" role="tab" data-i="2"><b>03</b> Katalog Produk</button>
+                    <button class="demo-tab" type="button" role="tab" data-i="3"><b>04</b> Portfolio</button>
+                    <button class="demo-tab" type="button" role="tab" data-i="4"><b>05</b> Website Bisnis</button>
                 </div>
 
+                <!-- STAGE -->
+                <div class="demo-stage reveal">
 
-                <!-- PROJECT GRID -->
+                    <div class="demo-info" id="demoInfo">
+                        <span class="demo-type" id="demoType"></span>
+                        <h3 id="demoTitle"></h3>
+                        <p id="demoDesc"></p>
+                        <ul class="demo-feats" id="demoFeats"></ul>
 
-                <div class="portfolio-grid">
-
-
-                    <!-- =================================
-                        PROJECT 1 — HALDERA
-                    ================================== -->
-
-                    <article
-                        class="project-card reveal"
-                        data-category="business"
-                    >
-
-                        <div class="project-gallery">
-
-                            <div class="gallery-main">
-
-                                <img
-                                    src="assets/images/haldera/01-home.webp"
-                                    alt="Haldera.co - halaman utama"
-                                    class="gallery-main-image"
-                                >
-
-                                <button
-                                    class="gallery-prev"
-                                    type="button"
-                                    aria-label="Screenshot sebelumnya"
-                                >
-                                    <i data-lucide="chevron-left"></i>
-                                </button>
-
-                                <button
-                                    class="gallery-next"
-                                    type="button"
-                                    aria-label="Screenshot berikutnya"
-                                >
-                                    <i data-lucide="chevron-right"></i>
-                                </button>
-
+                        <div class="demo-actions">
+                            <a class="btn btn-primary" id="demoOpen" href="demo_1.html" target="_blank" rel="noopener">
+                                <i data-lucide="external-link"></i> Buka Demo
+                            </a>
+                            <div class="demo-switch" role="group" aria-label="Ukuran tampilan">
+                                <button type="button" class="active" data-mode="desktop" aria-label="Tampilan desktop"><i data-lucide="monitor"></i></button>
+                                <button type="button" data-mode="mobile" aria-label="Tampilan HP"><i data-lucide="smartphone"></i></button>
                             </div>
-
-
-                            <div class="gallery-thumbs">
-
-                                <button
-                                    class="gallery-thumb active"
-                                    type="button"
-                                    data-image="assets/images/haldera/01-home.webp"
-                                >
-                                    <img
-                                        src="assets/images/haldera/01-home.webp"
-                                        alt="Haldera Home"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/haldera/02-produk.webp"
-                                >
-                                    <img
-                                        src="assets/images/haldera/02-produk.webp"
-                                        alt="Haldera Produk"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/haldera/03-keranjang.webp"
-                                >
-                                    <img
-                                        src="assets/images/haldera/03-keranjang.webp"
-                                        alt="Haldera Keranjang"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/haldera/04-admin.webp"
-                                >
-                                    <img
-                                        src="assets/images/haldera/04-admin.webp"
-                                        alt="Haldera Admin"
-                                    >
-                                </button>
-
-                            </div>
-
                         </div>
+                    </div>
 
-
-                        <div class="project-info">
-
-                            <div class="project-meta">
-                                <span>01 / E-COMMERCE</span>
-                                <span class="project-category">
-                                    BUSINESS
-                                </span>
-                            </div>
-
-                            <h3>Haldera.co</h3>
-
-                            <p>
-                                Website e-commerce untuk bisnis sablon dan jersey
-                                dengan katalog produk, keranjang belanja,
-                                autentikasi, dan pengelolaan produk.
-                            </p>
-
-                            <div class="project-tech">
-                                <span>Laravel</span>
-                                <span>MySQL</span>
-                                <span>Blade</span>
-                            </div>
-
-                            <span class="project-status">
-                                Personal Project
-                            </span>
-
+                    <div class="demo-device" id="demoDevice">
+                        <div class="demo-bar">
+                            <span class="demo-dots"><i></i><i></i><i></i></span>
+                            <span class="demo-url" id="demoUrl">demo_1.html</span>
                         </div>
-
-                    </article>
-
-
-
-                    <!-- =================================
-                        PROJECT 2 — TOKO ATK
-                    ================================== -->
-
-                    <article
-                        class="project-card reveal"
-                        data-category="application"
-                    >
-
-                        <div class="project-gallery">
-
-                            <div class="gallery-main">
-
-                                <img
-                                    src="assets/images/toko-atk/01-dashboard.webp"
-                                    alt="Dashboard Toko Alat Tulis"
-                                    class="gallery-main-image"
-                                >
-
-                                <button
-                                    class="gallery-prev"
-                                    type="button"
-                                    aria-label="Screenshot sebelumnya"
-                                >
-                                    <i data-lucide="chevron-left"></i>
-                                </button>
-
-                                <button
-                                    class="gallery-next"
-                                    type="button"
-                                    aria-label="Screenshot berikutnya"
-                                >
-                                    <i data-lucide="chevron-right"></i>
-                                </button>
-
-                            </div>
-
-
-                            <div class="gallery-thumbs">
-
-                                <button
-                                    class="gallery-thumb active"
-                                    type="button"
-                                    data-image="assets/images/toko-atk/01-dashboard.webp"
-                                >
-                                    <img
-                                        src="assets/images/toko-atk/01-dashboard.webp"
-                                        alt="Dashboard"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/toko-atk/02-inventory.webp"
-                                >
-                                    <img
-                                        src="assets/images/toko-atk/02-inventory.webp"
-                                        alt="Inventory"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/toko-atk/03-master-data.webp"
-                                >
-                                    <img
-                                        src="assets/images/toko-atk/03-master-data.webp"
-                                        alt="Master Data"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/toko-atk/04-laporan.webp"
-                                >
-                                    <img
-                                        src="assets/images/toko-atk/04-laporan.webp"
-                                        alt="Laporan"
-                                    >
-                                </button>
-
-                            </div>
-
+                        <div class="demo-viewport" id="demoViewport">
+                            <iframe id="demoFrame" title="Preview demo website" tabindex="-1"></iframe>
                         </div>
-
-
-                        <div class="project-info">
-
-                            <div class="project-meta">
-                                <span>02 / WEB APPLICATION</span>
-
-                                <span class="project-category">
-                                    APPLICATION
-                                </span>
-                            </div>
-
-                            <h3>Toko Alat Tulis</h3>
-
-                            <p>
-                                Aplikasi manajemen inventori untuk mengelola
-                                kategori barang, stok masuk dan keluar,
-                                master data, serta laporan.
-                            </p>
-
-                            <div class="project-tech">
-                                <span>Laravel</span>
-                                <span>PHP</span>
-                                <span>MySQL</span>
-                            </div>
-
-                            <span class="project-status">
-                                Personal Project
-                            </span>
-
-                        </div>
-
-                    </article>
-
-                    <!-- =================================
-                        PROJECT 4 — TATA SURYA
-                    ================================== -->
-
-                    <article
-                        class="project-card reveal"
-                        data-category="education"
-                    >
-
-                        <div class="project-gallery">
-
-                            <div class="gallery-main">
-
-                                <img
-                                    src="assets/images/tata-surya/01-home.webp"
-                                    alt="Website edukasi Tata Surya"
-                                    class="gallery-main-image"
-                                >
-
-                                <button
-                                    class="gallery-prev"
-                                    type="button"
-                                    aria-label="Screenshot sebelumnya"
-                                >
-                                    <i data-lucide="chevron-left"></i>
-                                </button>
-
-                                <button
-                                    class="gallery-next"
-                                    type="button"
-                                    aria-label="Screenshot berikutnya"
-                                >
-                                    <i data-lucide="chevron-right"></i>
-                                </button>
-
-                            </div>
-
-
-                            <div class="gallery-thumbs">
-
-                                <button
-                                    class="gallery-thumb active"
-                                    type="button"
-                                    data-image="assets/images/tata-surya/01-home.webp"
-                                >
-                                    <img
-                                        src="assets/images/tata-surya/01-home.webp"
-                                        alt="Tata Surya Home"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/tata-surya/02-planet.webp"
-                                >
-                                    <img
-                                        src="assets/images/tata-surya/02-planet.webp"
-                                        alt="Tata Surya Planet"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/tata-surya/03-video.webp"
-                                >
-                                    <img
-                                        src="assets/images/tata-surya/03-video.webp"
-                                        alt="Tata Surya Galeri"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/tata-surya/04-kuis.webp"
-                                >
-                                    <img
-                                        src="assets/images/tata-surya/04-kuis.webp"
-                                        alt="Tata Surya Kuis"
-                                    >
-                                </button>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="project-info">
-
-                            <div class="project-meta">
-                                <span>04 / EDUCATIONAL WEBSITE</span>
-
-                                <span class="project-category">
-                                    EDUCATION
-                                </span>
-                            </div>
-
-                            <h3>Eksplorasi Tata Surya</h3>
-
-                            <p>
-                                Website edukasi multimedia dengan informasi
-                                planet, galeri, video, audio, dan kuis interaktif.
-                            </p>
-
-                            <div class="project-tech">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-
-                            <span class="project-status">
-                                Academic Project
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =================================
-                        PROJECT 5 — PORTFOLIO
-                    ================================== -->
-
-                    <article
-                        class="project-card reveal"
-                        data-category="personal"
-                    >
-
-                        <div class="project-gallery">
-
-                            <div class="gallery-main">
-
-                                <img
-                                    src="assets/images/portfolio/01-home.webp"
-                                    alt="Personal portfolio Abdul Rahman"
-                                    class="gallery-main-image"
-                                >
-
-                                <button
-                                    class="gallery-prev"
-                                    type="button"
-                                    aria-label="Screenshot sebelumnya"
-                                >
-                                    <i data-lucide="chevron-left"></i>
-                                </button>
-
-                                <button
-                                    class="gallery-next"
-                                    type="button"
-                                    aria-label="Screenshot berikutnya"
-                                >
-                                    <i data-lucide="chevron-right"></i>
-                                </button>
-
-                            </div>
-
-
-                            <div class="gallery-thumbs">
-
-                                <button
-                                    class="gallery-thumb active"
-                                    type="button"
-                                    data-image="assets/images/portfolio/01-home.webp"
-                                >
-                                    <img
-                                        src="assets/images/portfolio/01-home.webp"
-                                        alt="Portfolio Home"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/portfolio/02-projects.webp"
-                                >
-                                    <img
-                                        src="assets/images/portfolio/02-projects.webp"
-                                        alt="Portfolio Projects"
-                                    >
-                                </button>
-
-                                <button
-                                    class="gallery-thumb"
-                                    type="button"
-                                    data-image="assets/images/portfolio/03-contact.webp"
-                                >
-                                    <img
-                                        src="assets/images/portfolio/03-contact.webp"
-                                        alt="Portfolio Contact"
-                                    >
-                                </button>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="project-info">
-
-                            <div class="project-meta">
-                                <span>05 / PERSONAL WEBSITE</span>
-
-                                <span class="project-category">
-                                    PERSONAL
-                                </span>
-                            </div>
-
-                            <h3>Abdul Rahman Portfolio</h3>
-
-                            <p>
-                                Website portfolio personal untuk menampilkan
-                                profil, kemampuan, project, sertifikat,
-                                dan informasi kontak.
-                            </p>
-
-                            <div class="project-tech">
-                                <span>Laravel</span>
-                                <span>Tailwind</span>
-                                <span>JavaScript</span>
-                            </div>
-
-                            <span class="project-status">
-                                Personal Project
-                            </span>
-
-                        </div>
-
-                    </article>
-
+                    </div>
 
                 </div>
 

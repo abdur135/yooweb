@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo 3 — Katalog Produk | Batik Laras</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="demo_3.css">
+</head>
+<body>
+<a class="demo-badge" href="index.html">← Demo YooWeb · Katalog Produk</a>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a href="#" class="logo">Batik <i>Laras</i></a>
+    <input id="search" type="search" placeholder="Cari produk…" aria-label="Cari produk">
+    <button id="cartBtn" class="cart">Keranjang <span id="count">0</span></button>
+  </div>
+</header>
+
+<section class="banner">
+  <div class="wrap">
+    <p>KOLEKSI TERBARU 2026</p>
+    <h1>Batik tulis &amp; cap<br>dari tangan perajin Solo</h1>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="filters" id="filters">
+    <button class="on" data-cat="all">Semua</button>
+    <button data-cat="kemeja">Kemeja</button>
+    <button data-cat="dress">Dress</button>
+    <button data-cat="kain">Kain</button>
+    <button data-cat="aksesori">Aksesori</button>
+  </div>
+  <p class="result" id="result"></p>
+  <div class="grid" id="grid"></div>
+</main>
+
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head"><b>Keranjang</b><button id="closeCart" aria-label="Tutup">✕</button></div>
+  <ul id="cartList"></ul>
+  <div class="drawer-foot">
+    <div class="total"><span>Total</span><b id="total">Rp0</b></div>
+    <button class="buy" id="checkout">Pesan via WhatsApp</button>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<footer class="foot"><div class="wrap">© 2026 Batik Laras — contoh demo katalog produk oleh YooWeb.</div></footer>
+
+<script>
+var products = [
+  { id: 1, name: 'Kemeja Parang Rusak', cat: 'kemeja', price: 285000, c1: '#3b2a1a', c2: '#c8963e' },
+  { id: 2, name: 'Kemeja Mega Mendung', cat: 'kemeja', price: 265000, c1: '#1d3557', c2: '#7aa6d9' },
+  { id: 3, name: 'Dress Kawung Midi', cat: 'dress', price: 345000, c1: '#6b1f2a', c2: '#e6a08f' },
+  { id: 4, name: 'Dress Sekar Jagad', cat: 'dress', price: 375000, c1: '#1f5f4a', c2: '#a7d9b8' },
+  { id: 5, name: 'Kain Tulis Sidomukti 2m', cat: 'kain', price: 650000, c1: '#4a2c0f', c2: '#d9a441' },
+  { id: 6, name: 'Kain Cap Truntum 2m', cat: 'kain', price: 225000, c1: '#2b2b4f', c2: '#9a8fd6' },
+  { id: 7, name: 'Selendang Batik Sutra', cat: 'aksesori', price: 185000, c1: '#8a3b12', c2: '#f2c078' },
+  { id: 8, name: 'Tas Tote Batik', cat: 'aksesori', price: 129000, c1: '#2f4b3a', c2: '#d8c98a' }
+];
+var cart = {}, cat = 'all', q = '';
+var rp = function (n) { return 'Rp' + n.toLocaleString('id-ID'); };
+var $ = function (id) { return document.getElementById(id); };
+
+function render() {
+  var list = products.filter(function (p) {
+    return (cat === 'all' || p.cat === cat) && p.name.toLowerCase().indexOf(q) > -1;
+  });
+  $('result').textContent = list.length + ' produk ditemukan';
+  $('grid').innerHTML = list.map(function (p) {
+    return '<article class="item"><div class="thumb" style="--a:' + p.c1 + ';--b:' + p.c2 + '"><span>' + p.cat + '</span></div>' +
+      '<h3>' + p.name + '</h3><div class="row"><b>' + rp(p.price) + '</b>' +
+      '<button data-add="' + p.id + '">+ Tambah</button></div></article>';
+  }).join('') || '<p class="empty">Produk tidak ditemukan.</p>';
+}
+function renderCart() {
+  var ids = Object.keys(cart), total = 0, n = 0;
+  $('cartList').innerHTML = ids.map(function (id) {
+    var p = products.filter(function (x) { return x.id == id; })[0], qty = cart[id];
+    total += p.price * qty; n += qty;
+    return '<li><div><b>' + p.name + '</b><small>' + rp(p.price) + '</small></div>' +
+      '<div class="qty"><button data-dec="' + id + '">−</button><span>' + qty + '</span><button data-inc="' + id + '">+</button></div></li>';
+  }).join('') || '<li class="empty">Keranjang masih kosong.</li>';
+  $('total').textContent = rp(total);
+  $('count').textContent = n;
+}
+function open(v) {
+  $('drawer').classList.toggle('open', v);
+  $('scrim').classList.toggle('open', v);
+  $('drawer').setAttribute('aria-hidden', !v);
+}
+document.addEventListener('click', function (e) {
+  var t = e.target;
+  if (t.dataset.add) { cart[t.dataset.add] = (cart[t.dataset.add] || 0) + 1; renderCart(); }
+  if (t.dataset.inc) { cart[t.dataset.inc]++; renderCart(); }
+  if (t.dataset.dec) { if (--cart[t.dataset.dec] < 1) delete cart[t.dataset.dec]; renderCart(); }
+  if (t.dataset.cat) {
+    cat = t.dataset.cat;
+    document.querySelectorAll('#filters button').forEach(function (b) { b.classList.toggle('on', b === t); });
+    render();
+  }
+});
+$('search').addEventListener('input', function () { q = this.value.toLowerCase().trim(); render(); });
+$('cartBtn').onclick = function () { open(true); };
+$('closeCart').onclick = $('scrim').onclick = function () { open(false); };
+$('checkout').onclick = function () {
+  var ids = Object.keys(cart);
+  if (!ids.length) return;
+  var lines = ids.map(function (id) {
+    var p = products.filter(function (x) { return x.id == id; })[0];
+    return '- ' + p.name + ' x' + cart[id];
+  });
+  var msg = 'Halo Batik Laras, saya mau pesan:\n' + lines.join('\n') + '\nTotal: ' + $('total').textContent;
+  window.open('https://wa.me/6281234567890?text=' + encodeURIComponent(msg), '_blank');
+};
+render(); renderCart();
+</script>
+</body>
+</html>

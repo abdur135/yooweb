@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo 2 — Company Profile | Nusantara Konstruksi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="demo_2.css">
+</head>
+<body>
+<a class="demo-badge" href="index.html">← Demo YooWeb · Company Profile</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a href="#" class="brand"><span class="mark">N</span> Nusantara <b>Konstruksi</b></a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <nav id="menu">
+      <a href="#tentang">Tentang</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#tim">Tim</a>
+      <a href="#kontak" class="btn sm">Hubungi Kami</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">PT Nusantara Konstruksi Mandiri · Sejak 2009</p>
+      <h1>Membangun dengan <span>presisi</span>,<br>menyerahkan dengan <span>tepat waktu</span>.</h1>
+      <p class="lead">Kontraktor bangunan komersial, gudang, dan hunian dengan lebih dari 150 proyek selesai di seluruh Jawa.</p>
+      <a href="#kontak" class="btn">Minta Penawaran</a>
+    </div>
+  </section>
+
+  <section class="numbers">
+    <div class="wrap nums">
+      <div><b data-n="15">0</b><span>Tahun pengalaman</span></div>
+      <div><b data-n="150">0</b><span>Proyek selesai</span></div>
+      <div><b data-n="48">0</b><span>Tenaga ahli</span></div>
+      <div><b data-n="98">0</b><span>% tepat jadwal</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="tentang">
+    <div class="wrap two">
+      <div class="photo" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div>
+        <span class="tag">TENTANG KAMI</span>
+        <h2>Mitra konstruksi yang bisa diandalkan</h2>
+        <p>Kami memulai dari proyek renovasi kecil dan kini dipercaya mengerjakan gudang industri, ruko, hingga perumahan. Setiap proyek diawasi insinyur berpengalaman dengan pelaporan progres mingguan.</p>
+        <ul class="ticks">
+          <li>Bersertifikat K3 &amp; SBU Konstruksi</li>
+          <li>Garansi struktur hingga 5 tahun</li>
+          <li>Laporan progres transparan</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section grey" id="layanan">
+    <div class="wrap">
+      <span class="tag">LAYANAN</span>
+      <h2>Yang kami kerjakan</h2>
+      <div class="cards">
+        <article><span>01</span><h3>Bangunan Komersial</h3><p>Ruko, kantor, dan gedung usaha dari desain hingga serah terima.</p></article>
+        <article><span>02</span><h3>Gudang &amp; Industri</h3><p>Struktur baja ringan dan berat untuk pabrik dan pergudangan.</p></article>
+        <article><span>03</span><h3>Hunian &amp; Renovasi</h3><p>Rumah tinggal baru maupun renovasi total dengan RAB jelas.</p></article>
+        <article><span>04</span><h3>Konsultasi &amp; Desain</h3><p>Gambar kerja, RAB, dan pengawasan oleh tim arsitek internal.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="proyek">
+    <div class="wrap">
+      <span class="tag">PROYEK</span>
+      <h2>Karya terbaru</h2>
+      <div class="projects">
+        <figure class="p p1"><figcaption><b>Gudang Logistik Cikarang</b>12.000 m² · 2025</figcaption></figure>
+        <figure class="p p2"><figcaption><b>Ruko Boulevard Bekasi</b>24 unit · 2024</figcaption></figure>
+        <figure class="p p3"><figcaption><b>Klinik Sehat Bandung</b>3 lantai · 2024</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section grey" id="tim">
+    <div class="wrap">
+      <span class="tag">TIM</span>
+      <h2>Orang di balik proyek</h2>
+      <div class="team">
+        <div><i>AS</i><b>Ir. Agus Setiawan</b><span>Direktur Utama</span></div>
+        <div><i>RP</i><b>Rina Prameswari, ST</b><span>Kepala Arsitek</span></div>
+        <div><i>BH</i><b>Budi Hartono, MT</b><span>Manajer Proyek</span></div>
+        <div><i>DL</i><b>Dewi Lestari</b><span>Estimator &amp; QS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kontak">
+    <div class="wrap two contact">
+      <div>
+        <span class="tag">KONTAK</span>
+        <h2>Diskusikan proyek Anda</h2>
+        <p>Jl. Industri Raya No. 21, Cikarang, Bekasi<br>Senin–Jumat, 08.00–17.00 WIB<br>info@nusantarakonstruksi.id</p>
+      </div>
+      <form id="contactForm" class="form">
+        <input name="nama" placeholder="Nama / perusahaan" required>
+        <select name="jenis" required>
+          <option value="">Jenis proyek</option>
+          <option>Bangunan Komersial</option><option>Gudang &amp; Industri</option><option>Hunian &amp; Renovasi</option><option>Konsultasi &amp; Desain</option>
+        </select>
+        <textarea name="detail" rows="3" placeholder="Ceritakan singkat kebutuhan Anda"></textarea>
+        <button class="btn" type="submit">Kirim ke WhatsApp</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap">© 2026 PT Nusantara Konstruksi Mandiri — contoh demo company profile oleh YooWeb.</div></footer>
+
+<script>
+document.getElementById('burger').onclick = function () {
+  document.getElementById('menu').classList.toggle('open');
+};
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = new FormData(this);
+  var msg = 'Halo, saya ' + f.get('nama') + '. Proyek: ' + f.get('jenis') + '. ' + (f.get('detail') || '');
+  window.open('https://wa.me/6281234567890?text=' + encodeURIComponent(msg), '_blank');
+});
+var io = new IntersectionObserver(function (es) {
+  es.forEach(function (en) {
+    if (!en.isIntersecting) return;
+    var el = en.target, to = +el.dataset.n, cur = 0, step = Math.max(1, Math.round(to / 50));
+    var t = setInterval(function () {
+      cur = Math.min(to, cur + step); el.textContent = cur;
+      if (cur >= to) clearInterval(t);
+    }, 25);
+    io.unobserve(el);
+  });
+}, { threshold: .6 });
+document.querySelectorAll('[data-n]').forEach(function (el) { io.observe(el); });
+</script>
+</body>
+</html>

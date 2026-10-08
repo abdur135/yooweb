@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo 4 — Portfolio Personal | Rizky Pratama</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="demo_4.css">
+</head>
+<body>
+<a class="demo-badge" href="index.html">← Demo YooWeb · Portfolio Personal</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo">rp.</a>
+    <nav>
+      <a href="#karya">Karya</a>
+      <a href="#skill">Skill</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#kontak">Kontak</a>
+      <button id="theme" aria-label="Ganti tema">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="avatar" aria-hidden="true">RP</div>
+    <p class="hi">Halo, saya</p>
+    <h1>Rizky Pratama,<br><span id="role">UI/UX Designer</span><i class="caret"></i></h1>
+    <p class="about">Saya merancang antarmuka yang jelas dan nyaman dipakai untuk aplikasi mobile dan web. Saat ini terbuka untuk proyek freelance dan kolaborasi.</p>
+    <div class="cta">
+      <a href="#karya" class="btn">Lihat Karya</a>
+      <a href="#kontak" class="btn ghost">Ajak Kerja Sama</a>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="karya">
+    <div class="head"><span>01</span><h2>Karya pilihan</h2></div>
+    <div class="works">
+      <a class="work w1" href="#kontak"><div class="shot"><i></i><i></i><i></i></div><div><h3>Dompetku — Aplikasi Keuangan</h3><p>Mobile · UX Research, UI</p></div></a>
+      <a class="work w2" href="#kontak"><div class="shot"><i></i><i></i><i></i></div><div><h3>Tanamin — Marketplace Tanaman</h3><p>Web · Branding, UI</p></div></a>
+      <a class="work w3" href="#kontak"><div class="shot"><i></i><i></i><i></i></div><div><h3>Sehatin — Dashboard Klinik</h3><p>Web app · Design System</p></div></a>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="skill">
+    <div class="head"><span>02</span><h2>Keahlian</h2></div>
+    <div class="skills">
+      <div class="skill"><div><b>Figma &amp; Prototyping</b><em>95%</em></div><div class="bar"><i style="--w:95%"></i></div></div>
+      <div class="skill"><div><b>UX Research</b><em>85%</em></div><div class="bar"><i style="--w:85%"></i></div></div>
+      <div class="skill"><div><b>HTML &amp; CSS</b><em>80%</em></div><div class="bar"><i style="--w:80%"></i></div></div>
+      <div class="skill"><div><b>Design System</b><em>75%</em></div><div class="bar"><i style="--w:75%"></i></div></div>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="pengalaman">
+    <div class="head"><span>03</span><h2>Pengalaman</h2></div>
+    <ol class="timeline">
+      <li><time>2024 — Sekarang</time><h3>Senior Product Designer</h3><p>Studio Nusa Digital · memimpin desain 3 produk fintech.</p></li>
+      <li><time>2022 — 2024</time><h3>UI Designer</h3><p>Startup Tanamin · membangun design system dari nol.</p></li>
+      <li><time>2018 — 2022</time><h3>S1 Desain Komunikasi Visual</h3><p>Institut Kreatif Bandung · lulus cum laude.</p></li>
+    </ol>
+  </section>
+
+  <section class="wrap sec contact" id="kontak">
+    <div class="head"><span>04</span><h2>Mari ngobrol</h2></div>
+    <p class="big">Punya ide atau proyek? Kirim pesan, saya balas maksimal 1×24 jam.</p>
+    <form id="form" class="form">
+      <input name="nama" placeholder="Nama" required>
+      <input name="email" type="email" placeholder="Email" required>
+      <textarea name="pesan" rows="4" placeholder="Ceritakan proyekmu" required></textarea>
+      <button class="btn" type="submit">Kirim Pesan</button>
+      <p class="ok" id="ok" hidden>Terima kasih! Pesan kamu terkirim (simulasi demo).</p>
+    </form>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap">© 2026 Rizky Pratama — contoh demo portfolio personal oleh YooWeb.</div></footer>
+
+<script>
+// Efek mengetik
+var roles = ['UI/UX Designer', 'Product Designer', 'Front-end Enthusiast'], ri = 0, ci = 0, del = false, el = document.getElementById('role');
+(function tick() {
+  var w = roles[ri];
+  el.textContent = w.slice(0, ci);
+  if (!del && ci === w.length) { del = true; return setTimeout(tick, 1500); }
+  if (del && ci === 0) { del = false; ri = (ri + 1) % roles.length; }
+  ci += del ? -1 : 1;
+  setTimeout(tick, del ? 40 : 90);
+})();
+// Tema
+var root = document.documentElement;
+document.getElementById('theme').onclick = function () {
+  root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+};
+// Bar skill muncul saat terlihat
+var io = new IntersectionObserver(function (es) {
+  es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .4 });
+document.querySelectorAll('.bar').forEach(function (b) { io.observe(b); });
+// Form simulasi
+document.getElementById('form').addEventListener('submit', function (e) {
+  e.preventDefault(); this.reset(); document.getElementById('ok').hidden = false;
+});
+</script>
+</body>
+</html>

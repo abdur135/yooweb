@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo 1 — Landing Page | Brewlab Cold Brew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="demo_1.css">
+</head>
+<body>
+<a class="demo-badge" href="index.html">← Demo YooWeb · Landing Page</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo">brew<span>lab</span></a>
+    <nav>
+      <a href="#manfaat">Manfaat</a>
+      <a href="#varian">Varian</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#order" class="btn sm">Pesan</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-text">
+        <span class="tag">Cold brew · Diseduh 18 jam</span>
+        <h1>Kopi dingin yang <em>halus</em>, tanpa pahit berlebih.</h1>
+        <p>Biji pilihan petani lokal, diseduh dingin selama 18 jam, dikirim segar ke pintu rumahmu di hari yang sama.</p>
+        <div class="cta">
+          <a href="#order" class="btn">Pesan Sekarang</a>
+          <a href="#varian" class="btn ghost">Lihat Varian</a>
+        </div>
+        <ul class="stats">
+          <li><b>4.9</b><span>Rating pelanggan</span></li>
+          <li><b>12rb+</b><span>Botol terjual</span></li>
+          <li><b>0</b><span>Pengawet</span></li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="bottle"><div class="label">brewlab<small>ORIGINAL</small></div></div>
+        <div class="bottle b2"><div class="label">brewlab<small>OAT LATTE</small></div></div>
+        <div class="glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="manfaat">
+    <div class="wrap">
+      <h2>Kenapa <em>Brewlab</em>?</h2>
+      <div class="grid3">
+        <article class="card"><span class="ico">☕</span><h3>Rendah asam</h3><p>Seduh dingin menghasilkan rasa lebih lembut dan ramah di lambung.</p></article>
+        <article class="card"><span class="ico">🌱</span><h3>Biji lokal</h3><p>Langsung dari petani Jawa Barat dan Aceh Gayo dengan harga adil.</p></article>
+        <article class="card"><span class="ico">🚚</span><h3>Kirim hari ini</h3><p>Pesan sebelum jam 3 sore, sampai di hari yang sama untuk area kota.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="varian">
+    <div class="wrap">
+      <h2>Pilih <em>varianmu</em></h2>
+      <div class="grid3">
+        <article class="card product"><div class="swatch s1"></div><h3>Original</h3><p>Black cold brew, bersih dan pekat.</p><b>Rp28.000</b></article>
+        <article class="card product"><div class="swatch s2"></div><h3>Oat Latte</h3><p>Susu oat creamy, tanpa laktosa.</p><b>Rp32.000</b></article>
+        <article class="card product"><div class="swatch s3"></div><h3>Aren Vanilla</h3><p>Manis gula aren dengan aroma vanila.</p><b>Rp32.000</b></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimoni">
+    <div class="wrap">
+      <h2>Kata <em>mereka</em></h2>
+      <div class="grid3">
+        <blockquote class="card">“Biasanya kopi dingin bikin perih, yang ini nggak sama sekali.”<cite>— Dinda, Bandung</cite></blockquote>
+        <blockquote class="card">“Langganan mingguan buat tim kantor. Selalu habis duluan.”<cite>— Raka, Jakarta</cite></blockquote>
+        <blockquote class="card">“Rasanya konsisten dan kemasannya rapi banget.”<cite>— Sari, Bekasi</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section order" id="order">
+    <div class="wrap order-in">
+      <div>
+        <h2>Siap <em>ngopi dingin?</em></h2>
+        <p>Isi form singkat, pesananmu langsung masuk ke WhatsApp kami.</p>
+      </div>
+      <form id="orderForm" class="form">
+        <input name="nama" placeholder="Nama kamu" required>
+        <select name="varian" required>
+          <option value="">Pilih varian</option>
+          <option>Original</option><option>Oat Latte</option><option>Aren Vanilla</option>
+        </select>
+        <input name="jumlah" type="number" min="1" value="1" required>
+        <button class="btn" type="submit">Pesan via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap">© 2026 Brewlab — contoh demo landing page oleh YooWeb.</div></footer>
+
+<script>
+document.getElementById('orderForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = new FormData(this);
+  var msg = 'Halo Brewlab, saya ' + f.get('nama') + ' ingin pesan ' + f.get('jumlah') + ' botol ' + f.get('varian') + '.';
+  window.open('https://wa.me/6281234567890?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+</body>
+</html>
